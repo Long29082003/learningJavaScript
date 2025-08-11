@@ -62,6 +62,15 @@ const deleteButtonClicked = (element) => {
     localStorage.setItem("data", JSON.stringify(taskData));
 }
 
+const finishButtonClicked = (element) => {
+    const status = element.checked;
+    const retrievedId = element.parentElement.id;
+    const currentTaskIndex = taskData.findIndex((item) => item.id === retrievedId);
+    taskData[currentTaskIndex].finish = status;
+    //Display changes to UI
+    element.nextElementSibling.classList.toggle("finished");
+}
+
 const updateTaskArray = () => {
     if ((!titleInput.value && !dateInput.value && !descriptionInput.value) || titleInput.value.trim().length === 0) {
         alert("Please enter in the text before press submit!");
@@ -73,6 +82,7 @@ const updateTaskArray = () => {
         title: titleInput.value,
         date: dateInput.value,
         description: descriptionInput.value,
+        finish: false,
     };
 
     const currentTaskIndex = taskData.findIndex((item) => item.id === currentTask.id);
@@ -81,6 +91,7 @@ const updateTaskArray = () => {
         taskData.unshift(newObj);
     } else {
         taskData[currentTaskIndex] = newObj;
+        taskData[currentTaskIndex].finish = currentTask.finish;
     };
     localStorage.setItem("data", JSON.stringify(taskData));
 };
@@ -89,12 +100,14 @@ const updateTaskArray = () => {
 const renderArray = () => {
     tasksList.innerHTML = "";
 
-    taskData.forEach(({id, title, date, description}) => {
+    taskData.forEach(({id, title, date, description, finish}) => {
+        [year, month, day] = date.split("-");
         HTMLString = `
             <div class = "task-entry" id = "${id}">
-                <button class = "edit-button" onclick = "editButtonClicked(this)">
+                <input type = "checkbox" class = "finish-button" ${finish ? 'checked' : ''} onclick = "finishButtonClicked(this)">
+                <button class = "edit-button ${finish ? 'finished' : ''}" onclick = "editButtonClicked(this)">
                     <p class = "text-inside-button"><strong>Title: </strong>${title}</p>
-                    <p class = "text-inside-button"><strong>Date: </strong>${date}</p>
+                    <p class = "text-inside-button"><strong>Date: </strong>${month}-${day}-${year}</p>
                     <p class = "text-inside-button"><strong>Description: </strong>${description}</p>
                 </button>
                 <button class = "delete-button" onclick = "deleteButtonClicked(this)">
@@ -111,7 +124,6 @@ const addOrUpdateTask = (e) => {
     e.preventDefault();
     updateTaskArray();
     renderArray();
-
     reset();
 };
 
