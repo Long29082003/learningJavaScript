@@ -1,0 +1,387 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+.container {
+  border: 2.5px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  width: 350px;
+  margin: 10px auto 20px;
+  padding: 10px 15px;
+  background-color: rgb(244, 79, 80);
+}
+
+.container > p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.user-input {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+#search-input {
+  width: 180px;
+  height: 28px;
+  border-radius: 3px;
+  border: unset;
+  border-bottom: 3px solid black;
+}
+
+#search-button {
+  border: 0px;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 15px;
+  height: 28px;
+  width: 80px;
+  transition: background-color 250ms ease-in-out;
+}
+
+#search-button:hover {
+  background-color: rgb(253, 231, 231);
+  border: 1px solid black;
+}
+
+.image-container {
+    position: relative;
+    border: 10px ridge black;
+    width: 300px;
+    height: 290px;
+    margin: 20px auto -10px;
+    background-color: white;
+}
+
+.quote-container {
+  display: none;
+  border: 10px ridge black;
+  width: 300px;
+  height: 100px;
+  margin: 0px auto;
+  overflow-y: auto;
+  background-color: white;
+  text-align: center;
+  padding: 10px 5px 5px;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 17.5px;
+}
+
+
+#pokemon-image {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rarity {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 15px;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+.common {
+  font-family: 'ArcadeClassic', sans-serif;
+  color: rgb(164, 163, 163);
+}
+
+.uncommon {
+  font-family: 'ArcadeClassic', sans-serif;
+  color: rgb(132, 255, 137);
+}
+
+.rare {
+  font-family: 'ArcadeClassic', sans-serif;
+  color: rgb(60, 208, 246);
+}
+
+.epic {
+  font-family: 'ArcadeClassic', sans-serif;
+  color: rgb(143, 9, 201);
+}
+
+.lengendary {
+  font-family: 'ArcadeClassic', sans-serif; 
+  color: rgb(215, 15, 15);
+}
+
+.mythical {
+  font-family: 'ArcadeClassic', sans-serif; 
+  color: rgb(240, 43, 198);
+}
+
+.creature-info {
+  color: white;
+  margin: 20px auto 10px;
+  font-size: 18px;
+  padding-left: 15px;
+}
+
+
+#creature-name {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#creature-id {
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+#weight {
+    margin-right: 25px;
+}
+
+
+
+#types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 8px;
+}
+
+.type {
+    height: 27px;
+    width: 90px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.5px 3px 2px black;
+}
+
+.normal {
+  background-color: rgb(197, 193, 193);
+}
+
+
+.fire {
+  background-color: rgb(225, 20, 20);
+}
+
+.water {
+  background-color: rgb(40, 182, 249);
+}
+
+.electric {
+  background-color: rgb(239, 198, 54);
+}
+
+.grass {
+  background-color: rgb(162, 226, 126);
+}
+
+.ice {
+  background-color: rgb(176, 240, 254);
+}
+
+.fighting {
+  background-color: rgb(192, 123, 85);
+}
+
+.poison {
+  background-color: rgb(138, 97, 160);
+}
+
+.ground {
+  background-color: rgb(211, 189, 121);
+}
+
+.flying {
+  background-color: rgb(132, 155, 211);
+}
+
+.psychic {
+  background-color: rgb(232, 138, 204);
+}
+
+.bug {
+  background-color: rgb(193, 206, 122);
+}
+
+.rock {
+  background-color: rgb(174, 162, 106);
+}
+
+.ghost {
+  background-color: rgb(114, 116, 155);
+}
+
+.dragon {
+  background-color: rgb(144, 114, 201);
+}
+
+.dark {
+  background-color: rgb(103, 77, 38);
+}
+
+.steel {
+  background-color: rgb(158, 158, 158);
+}
+
+.fairy {
+  background-color: rgb(228, 197, 230);
+}
+
+.skills {
+    width: 300px;
+    height: 190px;
+    margin: 15px auto 0px;
+    font-family: 'ArcadeClassic', sans-serif;                                        
+}
+
+header {
+    background-color: black;
+    height: 38px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+header p {
+    color: white;
+    font-size: 18px;
+    width: 68%;
+    padding-left: 25px;
+}
+
+header .decoration {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.first {
+    background-color: rgb(232, 6, 8);
+}
+
+.second {
+    background-color: rgb(58, 230, 19);
+}
+
+.third {
+    background-color: white;
+}
+
+
+.skills-container {
+    border: 4px solid black;
+    width: 100%;
+    height: 152px;
+    background-color: white;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.skill {
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    width: 65%;
+}
+
+.skill-status {
+    width: 35%;
+}
+
+.hidden-skill {
+    color: rgb(234, 24, 1);
+}
+
+.normal-skill {
+    color: rgb(91, 252, 56)
+}
+
+.creature-stats {
+  width: 320px;
+  margin: 10px auto;
+  padding: 10px;
+  font-family: "ArcadeClassic", sans-serif;
+}
+
+tr:first-of-type {
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+}
+
+tr:first-of-type th {
+  border-collapse: collapse;
+  border: 2px solid black;
+  padding: 4px 2px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+tr:not(:first-of-type) {
+  background-color: white;
+  box-shadow: 2px 2px 2px black;
+}
+
+tr:not(:first-of-type) td {
+  border-collapse: collapse;
+  border: 4px solid rgb(81, 23, 104);
+  padding: 4px 7px;
+  font-size: 16px;
+}
+
+tr:last-of-type td {
+    border: 4px solid rgb(234, 207, 1);
+    font-weight: bold;
+    color: rgb(115, 40, 221);
+}
+
+tr:last-of-type #total {
+    text-decoration: underline;
+}
+
+#hp, #attack, #defense, #special-attack, #special-defense, #speed, #total {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+
+

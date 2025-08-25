@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+    <title>Pokemon-Creature-Search</title>
+    <link rel = "stylesheet" href = "styles.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Pokemon Creature Search</h1>
+    <div class = "container">
+      <p>Search for Creature Name or Id:</p>
+      <div class = "user-input">
+        <input type = "text" id = "search-input" required placeholder = "*There are 1025 pokemons">
+        <button type = "button" id = "search-button">Search</button>
+      </div>
+      <div class = "image-container">
+        <img id = "pokemon-image" alt = "pokemon-image">
+        <div class = "rarity">
+
+        </div>
+      </div>
+      <div class = "quote-container">
+
+      </div>
+      <div class = "creature-info">
+        <p class = "name-container"><span id = "creature-name"></span> <span id = "creature-id"></span></p>
+        <p><i>Weight: </i><span id = "weight"></span> <i>Height: </i><span id = "height"></span></p>
+        <div class = "element" id = "types">
+        </div>
+      </div>
+      <div class = "skills">
+            <header>
+                <p>Skills_List</p>
+                <div class = "decoration first"></div>
+                <div class = "decoration second"></div>
+                <div class = "decoration third"></div>
+            </header>
+            <div class = "skills-container" id = "skills-container">
+            </div>
+        </div>
+      <table class = "creature-stats">
+        <tr>
+          <th>Name</th>
+          <th>Stats</th>
+        </tr>
+        <tr>
+          <td>HP:</td>
+          <td id = "hp"></td>
+        </tr>
+        <tr>
+          <td>ATTACK:</td>
+          <td id = "attack"></td>
+        </tr>
+        <tr>
+          <td>DEFENSE:</td>
+          <td id = "defense"></td>
+        </tr>
+        <tr>
+          <td>SPECIAL ATTACK:</td>
+          <td id = "special-attack"></td>
+        </tr>
+        <tr>
+          <td>SPECIAL DEFENSE:</td>
+          <td id = "special-defense"></td>
+        </tr>
+        <tr>
+          <td>SPEED:</td>
+          <td id = "speed"></td>
+        </tr>
+        <tr>
+          <td>TOTAL:</td>
+          <td id = "total"></td>
+        </tr>
+      </table>
+    </div>
+    <script src = "script.js"></script>
+  </body>
+</html>
